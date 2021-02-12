@@ -1,6 +1,6 @@
 fn main() {
     cxx_build::bridge("src/lib.rs")  // returns a cc::Build
-        .file("cpp/lib.cpp")
+        .files(glob::glob("cpp/**/*.cpp").expect("Failed to read glob pattern").map(|r| r.unwrap()))
         .includes(vec!["fmod/inc", "."])
         .flag_if_supported("-std=c++11")
         .compile("rcxxfmod");

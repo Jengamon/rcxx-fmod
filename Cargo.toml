@@ -25,3 +25,4 @@ paw = {version = "1.0", optional = true}
 
 [build-dependencies]
 cxx-build = "1.0"
+glob = "0.3"
