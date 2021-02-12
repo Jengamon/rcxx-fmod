@@ -5,7 +5,7 @@ pub struct System {
 }
 
 impl System {
-    pub fn new(maxchannels: usize, flags: flags::FMOD_INITFLAGS) -> Result<System, String> {
+    pub fn new(maxchannels: u32, flags: flags::FMOD_INITFLAGS) -> Result<System, String> {
         match ffi::Create_CoreSystem_Pointer() {
             Ok(sys) => match sys.init(maxchannels, flags.bits()) {
                 Ok(()) => Ok(System {

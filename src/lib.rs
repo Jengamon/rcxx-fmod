@@ -10,7 +10,7 @@ mod ffi {
         type CoreSystem;
 
         fn Create_CoreSystem_Pointer() -> Result<UniquePtr<CoreSystem>>;
-        fn init(&self, maxchannels: usize, initflags: u32) -> Result<()>; 
+        fn init(&self, maxchannels: u32, initflags: u32) -> Result<()>; 
     }
 }
 

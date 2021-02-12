@@ -8,7 +8,7 @@ struct CoreSystem {
         this->sys = NULL;
     }
 
-    void init(size_t maxchannels, uint32_t flags) const;
+    void init(uint32_t maxchannels, uint32_t flags) const;
 
     FMOD::System* sys;
 };
@@ -26,7 +26,7 @@ std::unique_ptr<CoreSystem> Create_CoreSystem_Pointer() {
     return coreSystemPtr;
 }
 
-void CoreSystem::init(size_t maxchannels, uint32_t flags) const {
+void CoreSystem::init(uint32_t maxchannels, uint32_t flags) const {
     auto ret = this->sys->init(maxchannels, flags, NULL);
     if(ret != FMOD_OK) {
         throw new std::runtime_error(FMOD_ErrorString(ret));
