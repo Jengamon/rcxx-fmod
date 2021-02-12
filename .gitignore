@@ -1,0 +1,8 @@
+/target
+/fmod/lib/**/**.dll
+/fmod/lib/**/**.so
+/fmod/lib/**/**.dylib
+/fmod/lib/**/**.a
+/fmod/lib/**/**.lib
+/fmod/inc/**/**.h
+/fmod/inc/**/**.hpp

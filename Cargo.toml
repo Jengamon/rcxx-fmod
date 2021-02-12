@@ -1,0 +1,27 @@
+[package]
+name = "rcxx-fmod"
+version = "0.1.0"
+authors = ["Jengamon <bob.hostern@gmail.com>"]
+edition = "2018"
+links = "fmod"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[[bin]]
+name = "rfmod-player"
+required-features = [ "binlib" ]
+path = "src/main.rs"
+
+[features]
+binlib = [ "structopt", "paw" ]
+
+[dependencies]
+cxx = "1.0"
+bitflags = "1.2"
+structopt = {version = "0.3", optional = true, features = ["paw"]}
+paw = {version = "1.0", optional = true}
+
+[build-dependencies]
+cxx-build = "1.0"
